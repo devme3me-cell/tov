@@ -1,0 +1,27 @@
+# Netlify configuration for Turnover Clone
+#
+# IMPORTANT: Set the following environment variables in the Netlify UI:
+# - NEXT_PUBLIC_SUPABASE_URL: Your Supabase project URL
+# - NEXT_PUBLIC_SUPABASE_ANON_KEY: Your Supabase anonymous/public key
+# - SUPABASE_SERVICE_ROLE_KEY: Your Supabase service role key (for secure server-side operations)
+# - ADMIN_USERNAME: Admin login username
+# - ADMIN_PASSWORD: Admin login password
+#
+# Navigate to: Site settings > Environment variables in Netlify to add these
+
+[images]
+  remote_images = ["https://source.unsplash.com/.*", "https://images.unsplash.com/.*", "https://ext.same-assets.com/.*", "https://ugc.same-assets.com/.*"]
+
+[build]
+  command = "bun run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "20"
+  NEXT_PUBLIC_SUPABASE_URL = "https://vzlkomvcotijjldlpfts.supabase.co"
+  NEXT_PUBLIC_SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ6bGtvbXZjb3RpampsZGxwZnRzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjE2MzI1NzAsImV4cCI6MjA3NzIwODU3MH0.Og5-ifKKRIGosu0sue6PtuZVMiL8nqCL1l6FLN3TMnE"
+  ADMIN_USERNAME = "chituchitu"
+  ADMIN_PASSWORD = "1234567890"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
